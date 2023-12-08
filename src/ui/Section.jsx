@@ -9,6 +9,7 @@ import ButtonGroup from "./ButtonGroup";
 import UnitSection from "./UnitSection";
 import Aboutus from "./Aboutus";
 import ContentGrid from "./ContentGrid";
+import CellulesSection from "./CellulesSection";
 
 // const StyledSection = styled.section
 const StyledSection = styled(ContentGrid)`
@@ -100,6 +101,7 @@ function Section() {
         </Row>
       </StyledSection> */}
       <Aboutus />
+      <CellulesSection />
       <StyledSection
         type="full-width"
         bgc="var(--color-grey-0)"

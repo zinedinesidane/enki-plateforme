@@ -20,10 +20,10 @@ const ContentGrid = styled.section`
       var(--content-max-width)
     )
     [content-end]
-    /* 0 */
     minmax(0, var(--breakout-size))
     [breakout-end]
-    minmax(var(--padding-inline), 1fr) [full-width-end];
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
 
   & > :not(.breakout, .full-width),
   .full-width > :not(.breakout, .full-width) {

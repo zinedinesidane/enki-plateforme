@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { HiMiniMagnifyingGlass } from "react-icons/hi2";
 
 const StyledForm = styled.form`
-  border: 1px solid var(--color-grey-900);
+  border: 1px solid var(--color-grey-800);
   background: none;
   display: flex;
   align-items: center;

@@ -9,23 +9,28 @@ const GlobalStyles = createGlobalStyle`
   --color-primary-900: #151948;
   /* Grey */
   --color-grey-0: #fff;
-  --color-grey-100: #F6F7F9;
+  --color-grey-50: #F6F7F9;
+  --color-grey-100: #E9F2F7;
   --color-grey: #c3c3c3;
   --color-grey-200: #9E9E9E;
   --color-grey-300: #797979;
-  --color-grey-900: #0000000f;
+  --color-grey-800: #0000000f;
+  --color-grey-900: #00000087;
 
   /* --color-green-light: #4fc3b0; */
   --color-green-light: #CDEDE8;
   --color-green: #3bbca7;
+  --color-green-flash: #36DF1B;
+
   --color-orange: #f6cf5d;
+  --color-orange-300: #FFA35A;
+  --color-red: #EA1A1A;
 
   --backdrop-color: rgba(255, 255, 255, 0.1);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
   --shadow-md: 0px 0.6rem 2.4rem rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 2.4rem 3.2rem rgba(0, 0, 0, 0.12);
-
   --border-radius-tiny: 3px;
   --border-radius-sm: 5px;
   --border-radius-md: 7px;
@@ -131,48 +136,7 @@ img {
 
 
 
-.content-grid {
-  --padding-inline: 1rem;
-  --content-max-width: 800px;
-  --breakout-max-width: 1200px;
 
-  --breakout-size: calc(
-    (var(--breakout-max-width) - var(--content-max-width)) / 2
-  );
-
-  display: grid;
-  grid-template-columns:
-    [full-width-start] 
-     minmax(var(--padding-inline), 1fr)
-    [breakout-start] 
-     minmax(0, var(--breakout-size))
-    [content-start] min(
-      100% - (var(--padding-inline) * 2),
-      var(--content-max-width)
-    )
-    [content-end]
-    /* 0 */
-    minmax(0, var(--breakout-size))
-     [breakout-end]
-     
-    minmax(var(--padding-inline), 1fr) [full-width-end];
-}
-
-.content-grid > :not(.breakout, .full-width),
-.full-width > :not(.breakout, .full-width) {
-  grid-column: content;
-}
-
-.content-grid > .breakout {
-  grid-column: breakout;
-}
-
-.content-grid > .full-width {
-  grid-column: full-width;
-
-  display: grid;
-  grid-template-columns: inherit;
-}
 
 
 

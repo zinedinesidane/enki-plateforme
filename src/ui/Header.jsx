@@ -12,7 +12,7 @@ const StyledHeader = styled.header`
   z-index: 999;
   top: 0;
   padding: 0 4.8rem;
-  background-color: var(--color-grey-100);
+  background-color: var(--color-grey-50);
   align-items: center;
   justify-content: space-between;
 `;
