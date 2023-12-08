@@ -43,7 +43,7 @@ const Wrapper = styled.div`
     margin-top: 5rem;
   }
 `;
-const Cellules = styled.div`
+export const Cellules = styled.div`
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 3rem 2rem;
@@ -71,6 +71,7 @@ function CellulesSection() {
           <Cellule />
           <Cellule />
           <Cellule />
+          <Cellule finished={true} />
           <Cellule finished={true} />
         </Cellules>
         <Button variation="primary">Commencer à créer</Button>

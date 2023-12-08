@@ -10,6 +10,7 @@ import UnitSection from "./UnitSection";
 import Aboutus from "./Aboutus";
 import ContentGrid from "./ContentGrid";
 import CellulesSection from "./CellulesSection";
+import MyUnits from "./MyUnits";
 
 // const StyledSection = styled.section
 const StyledSection = styled(ContentGrid)`
@@ -178,12 +179,13 @@ function Section() {
         </Row>
       </StyledSection> */}
       <UnitSection />
+      <MyUnits />
       <StyledSection
         type="full-width"
         bgc="var(--color-grey-0)"
         // bgc="red"
         background="./imgs/sec2bg.png"
-        bg_position="150% 20%"
+        bg_position="-20% 10%"
         maxWidth="1000px"
       >
         <Row className="breakout" type="horizontal--full-width">

@@ -1,22 +1,13 @@
 import styled from "styled-components";
+import { StyledCellule } from "./Cellule";
+import { useState } from "react";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
-import { useState } from "react";
+import StarRating from "./StarRating";
 
-export const StyledCellule = styled.div`
-  position: relative;
-  background-color: var(--color-grey-0);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  width: 26rem;
-  height: 33rem;
-  border-radius: 32px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  & button {
-    background: none;
-    border: none;
-  }
+const StyledUnit = styled(StyledCellule)`
+  height: 43rem;
+  width: 27rem;
 `;
 const ModifyButton = styled.button`
   z-index: 99;
@@ -25,7 +16,7 @@ const ModifyButton = styled.button`
   right: 2rem;
   & svg {
     color: ${(props) =>
-      props.isFlipped ? "var(--color-primary)" : "var(--color-green)"};
+      props.isFlipped ? "var(--color-orange)" : "var(--color-primary)"};
 
     height: 3rem;
     width: 3rem;
@@ -33,47 +24,30 @@ const ModifyButton = styled.button`
 `;
 const Title = styled.span`
   font-size: 2rem;
-  font-weight: 600;
-  color: var(--color-grey-0);
+  font-weight: 700;
+  color: var(--color-orange);
+`;
+const Category = styled.span`
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-black);
 `;
 
 const Front = styled.div`
   height: 100%;
-
-  & > div:first-child {
-    position: relative;
-    height: 55%;
-    padding: 1.6rem 2.8rem;
-
-    & span {
-      font-size: 1.6rem;
-      font-weight: 500;
-
-      /* color: ${(props) =>
-        props.finished ? "var(--color-orange)" : "var(--color-green-flash)"}; */
-    }
-
-    & button {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 2rem;
-      font-weight: 600;
-      color: var(--color-grey-900);
-      white-space: nowrap;
-    }
+  & img {
+    height: 39%;
+    object-fit: cover;
   }
-  & > div:not(:first-child) {
-    height: 45%;
-    padding: 1rem;
-    background-color: var(--color-orange);
-    padding: 1.6rem 2.8rem;
+
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    text-align: center;
-    /* display: flex;
-    justify-content: center; */
-    & div {
+    height: 61%;
+    & > div:not(:first-child) {
       position: absolute;
       display: flex;
       align-items: center;
@@ -91,15 +65,18 @@ const Front = styled.div`
 const Back = styled.div`
   height: 100%;
   display: flex;
-
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5.5rem 1rem 2.6rem 1rem;
   gap: 2rem;
-  & > span {
-    color: var(--color-grey-900);
-    padding-bottom: 0.8rem;
+  & > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1rem;
     border-bottom: 1px solid var(--color-orange);
   }
   & ul {
@@ -120,20 +97,35 @@ const Back = styled.div`
   }
 `;
 
-function Cellule({ finished }) {
+function Unit({ finished }) {
   const [isFlipped, setFlipped] = useState(false);
   const handleFlip = () => {
     setFlipped(!isFlipped);
   };
   return (
-    <StyledCellule finished={finished}>
+    <StyledUnit>
       <ModifyButton isFlipped={!isFlipped} onClick={handleFlip}>
         <IoSettingsOutline />
       </ModifyButton>
-
       {!isFlipped ? (
         <Front>
+          <img src="./imgs/unitimg.png" alt="unit " />
+
           <div>
+            <StarRating
+              style={{
+                position: "absolute",
+                top: "1rem",
+                right: "2rem",
+              }}
+              defaultRating={4}
+              color="var(--color-orange)"
+              size={15}
+            />
+            <Title style={{ marginTop: "-2rem" }}>Conditionnel présent</Title>
+            <Category style={{ marginTop: "0.8rem", marginBottom: "2rem" }}>
+              Français
+            </Category>
             <span
               style={{
                 color: finished
@@ -143,15 +135,11 @@ function Cellule({ finished }) {
             >
               {" "}
               {finished ? "Terminé" : "En cours"}
-            </span>
-            <button>Ajouter une illustration</button>
-          </div>
-          <div>
-            <Title>Français : conjugaison</Title>
+            </span>{" "}
             <div
               style={{
-                bottom: "1.6rem",
-                left: "2.8rem",
+                bottom: "2.4rem",
+                left: "2rem",
               }}
             >
               <span>30</span>
@@ -159,8 +147,8 @@ function Cellule({ finished }) {
             </div>
             <div
               style={{
-                bottom: "1.6rem",
-                right: "2.8rem",
+                bottom: "2.4rem",
+                right: "2rem",
               }}
             >
               <span>10 unités</span>
@@ -169,7 +157,10 @@ function Cellule({ finished }) {
         </Front>
       ) : (
         <Back>
-          <Title>Français - grammaire</Title>
+          <div>
+            <Title>Hebben en Zijn</Title>
+            <Category>Néerlandais</Category>
+          </div>
           <ul>
             <li>
               <button>Modifier</button>
@@ -186,8 +177,8 @@ function Cellule({ finished }) {
           </ul>
         </Back>
       )}
-    </StyledCellule>
+    </StyledUnit>
   );
 }
 
-export default Cellule;
+export default Unit;

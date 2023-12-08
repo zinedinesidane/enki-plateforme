@@ -5,7 +5,7 @@ import Heading from "./Heading";
 import ContentGrid from "./ContentGrid";
 
 const StyledContentGrid = styled(ContentGrid)`
-  background-color: var(--color-grey-0);
+  background-color: var(--color-grey-50);
   background-image: url("./imgs/sec1bg.png");
   background-position: 25% center;
   min-height: calc(100vh - 8rem);
