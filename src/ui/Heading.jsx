@@ -4,11 +4,9 @@ const Heading = styled.h1`
   ${(props) =>
     props.as === "h1" &&
     css`
-      font-size: 6.4rem;
       font-size: 5rem;
       font-weight: 500;
-      line-height: 1.2;
-      max-width: 40rem;
+      line-height: 120%;
       color: var(--color-primary-900);
     `}
   ${(props) =>

@@ -5,6 +5,7 @@ const GlobalStyles = createGlobalStyle`
   --color-primary: #8a7efc;
   --color-primary-600:#0582CA;
   --color-primary-700: #072F60;
+  
   --color-primary-900: #151948;
   /* Grey */
   --color-grey-0: #fff;
@@ -132,7 +133,7 @@ img {
 
 .content-grid {
   --padding-inline: 1rem;
-  --content-max-width: 900px;
+  --content-max-width: 800px;
   --breakout-max-width: 1200px;
 
   --breakout-size: calc(
@@ -141,14 +142,19 @@ img {
 
   display: grid;
   grid-template-columns:
-    [full-width-start] minmax(var(--padding-inline), 1fr)
-    [breakout-start] minmax(0, var(--breakout-size))
+    [full-width-start] 
+     minmax(var(--padding-inline), 1fr)
+    [breakout-start] 
+     minmax(0, var(--breakout-size))
     [content-start] min(
       100% - (var(--padding-inline) * 2),
       var(--content-max-width)
     )
     [content-end]
-    minmax(0, var(--breakout-size)) [breakout-end]
+    /* 0 */
+    minmax(0, var(--breakout-size))
+     [breakout-end]
+     
     minmax(var(--padding-inline), 1fr) [full-width-end];
 }
 

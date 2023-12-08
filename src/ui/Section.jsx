@@ -6,10 +6,13 @@ import MAJSection from "./MAJSection";
 import ContactSection from "./ContactSection";
 import AvisSection from "./AvisSection";
 import ButtonGroup from "./ButtonGroup";
+import UnitSection from "./UnitSection";
+import Aboutus from "./Aboutus";
+import ContentGrid from "./ContentGrid";
 
-const StyledSection = styled.section`
+// const StyledSection = styled.section
+const StyledSection = styled(ContentGrid)`
   min-height: calc(100vh - 8rem);
-  /* height: calc(100vh - 8rem); */
   background-color: ${(props) => props.bgc};
   background-position: ${(props) => props.bg_position};
   background-image: url(${(props) => props.background});
@@ -63,7 +66,7 @@ const Content = styled.div`
 function Section() {
   return (
     <>
-      <StyledSection
+      {/* <StyledSection
         type="center"
         bgc="var(--color-grey-100)"
         background="./imgs/sec1bg.png"
@@ -95,8 +98,8 @@ function Section() {
             </ButtonGroup>
           </div>
         </Row>
-      </StyledSection>
-
+      </StyledSection> */}
+      <Aboutus />
       <StyledSection
         type="full-width"
         bgc="var(--color-grey-0)"
@@ -125,7 +128,7 @@ function Section() {
           Commencer à créer
         </Button>
       </StyledSection>
-      <StyledSection
+      {/* <StyledSection
         padding="0rem 5.4rem"
         type="center"
         // bgc="red"
@@ -159,7 +162,6 @@ function Section() {
               maxWidth: "40rem !important",
             }}
           >
-            {/* <img src="./imgs/sec3img.png" alt="Hero section img" /> */}
             <img
               style={
                 {
@@ -172,18 +174,33 @@ function Section() {
             />
           </Img>
         </Row>
-      </StyledSection>
-
+      </StyledSection> */}
+      <UnitSection />
       <StyledSection
         type="full-width"
         bgc="var(--color-grey-0)"
         // bgc="red"
         background="./imgs/sec2bg.png"
         bg_position="150% 20%"
+        maxWidth="1000px"
       >
-        <Row type="horizontal--full-width">
-          <Img>
-            <img src="./imgs/sec4img.jpg" alt="unité section img" />
+        <Row className="breakout" type="horizontal--full-width">
+          <Img
+            style={{
+              borderRadius: "5.2rem",
+              backgroundColor: "var(--color-orange)",
+              padding: "2.5rem 2rem",
+            }}
+          >
+            <img
+              style={{
+                objectFit: "cover",
+                clipPath:
+                  "polygon(20% 3%, 80% 3%, 97% 20%, 97% 80%,80% 97%, 20% 97%, 3% 80%, 3% 20%)",
+              }}
+              src="./imgs/sec4img.jpg"
+              alt="unité section img"
+            />
           </Img>
 
           <Content>

@@ -5,12 +5,14 @@ import { FaStar } from "react-icons/fa";
 import { FaQuoteLeft } from "react-icons/fa";
 
 import Row from "./Row";
+import ContentGrid from "./ContentGrid";
 
-const StyledAvisSection = styled.section`
+const StyledAvisSection = styled(ContentGrid)`
   background-color: var(--color-grey-100);
-  padding: 8rem 5.4rem;
+  padding: 8rem 5.4rem 6rem 5.4rem;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 
   & > div > h3 {
@@ -20,6 +22,7 @@ const StyledAvisSection = styled.section`
   }
   & > div > button {
     margin-right: 8rem;
+    margin-top: -3rem;
     align-self: end;
   }
 `;
@@ -55,13 +58,10 @@ const Testimonial = styled.div`
 `;
 
 const TestimonialText = styled.div`
-  /* padding: 3rem 1rem; */
   margin-top: 4rem;
-  /* background-color: red; */
-  /* height: 100%; */
+
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   max-width: 45rem;
   gap: 3.5rem;
 
