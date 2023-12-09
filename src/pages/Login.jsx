@@ -84,16 +84,16 @@ const LoginForm = styled.form`
   }
 `;
 
-const Group = styled.div`
+export const Group = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.5rem;
   color: #333;
   & > label {
     color: #666;
   }
   & > input {
-    width: 40rem;
+    /* width: 40rem; */
     border-radius: 6px;
     border: 1px solid rgba(102, 102, 102, 0.35);
     padding: 0.8rem 1.2rem;
@@ -107,11 +107,15 @@ const Group = styled.div`
     margin-right: 1rem;
     align-items: center;
     gap: 0.7rem;
+    font-size: 1.4rem;
     color: #666;
     & svg {
       height: 2rem;
       width: 2rem;
     }
+  }
+  & > p {
+    font-size: 1.2rem;
   }
 
   & > div {
@@ -119,6 +123,7 @@ const Group = styled.div`
     align-items: center;
     gap: 0.5rem;
     & label {
+      color: #666;
       font-size: 1.6rem;
     }
 
@@ -146,7 +151,7 @@ function Login() {
           <div>*Champs requis</div>
           <Group>
             <label htmlFor="email">*Adress mail</label>
-            <input id="email" type="text" />
+            <input style={{ width: "40rem" }} id="email" type="text" />
           </Group>
           <Group>
             <div>
@@ -156,10 +161,10 @@ function Login() {
                 <span>Hide</span>
               </button>
             </div>
-            <input id="password" type="password" />
+            <input style={{ width: "40rem" }} id="password" type="password" />
             <div>
-              <input type="checkbox" />
-              <label>Rester connecté ?</label>
+              <input id="rester-connecter" type="checkbox" />
+              <label htmlFor="rester-connecter">Rester connecté ?</label>
               <NavLink>
                 <IoIosHelpCircle />
               </NavLink>
@@ -170,7 +175,7 @@ function Login() {
         </LoginForm>
         <div>
           <span>Pas encore de compte ?</span>
-          <NavLink> S'inscrire</NavLink>
+          <NavLink to="/register"> S'inscrire</NavLink>
         </div>
       </Right>
 

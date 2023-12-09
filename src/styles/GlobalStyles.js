@@ -93,7 +93,7 @@ button:disabled {
   background-color: var(--color-grey);
   border: none;
   
-  padding: 1.2rem 1.6rem;
+  padding: 1.2rem 2rem;
   border-radius: 32px;
 }
 
@@ -103,13 +103,23 @@ input:disabled {
   color: var(--color-grey-500);
 }
 
-input:focus,
 button:focus,
-textarea:focus,
 select:focus {
-  outline: 2px solid var(--color-brand-600);
+  outline: 2px solid var(--color-primary);
   outline-offset: -1px;
 }
+input:focus,
+textarea:focus
+{
+  outline: 2px solid var(--color-grey-900);
+  outline-offset: -1px;
+}
+
+ input[type="checkbox"] {
+      accent-color: var(--color-grey-900);
+      width: 1.5rem;
+      height: 1.5rem;
+    }
 
 button:has(svg) {
   line-height: 0;

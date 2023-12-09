@@ -3,6 +3,7 @@ import ButtonGroup from "./ButtonGroup";
 import Button from "./Button";
 import Heading from "./Heading";
 import ContentGrid from "./ContentGrid";
+import { useNavigate } from "react-router-dom";
 
 const StyledContentGrid = styled(ContentGrid)`
   background-color: var(--color-grey-50);
@@ -54,9 +55,15 @@ const StyledContentGrid = styled(ContentGrid)`
 `;
 
 function Aboutus() {
+  const navigate = useNavigate();
+
+  const handleLogin = () => {
+    navigate("/login");
+  };
+  const handleRegister = () => {
+    navigate("/register");
+  };
   return (
-    // <StyledContentGrid as={ContentGrid}>
-    // <StyledContentGrid maxWidth="800px">
     <StyledContentGrid>
       <div>
         <div>
@@ -74,8 +81,12 @@ function Aboutus() {
           </p>
 
           <ButtonGroup style={{ margin: "7rem 0 2rem 0" }}>
-            <Button style={{ width: "15rem" }}>S'inscrire</Button>
-            <Button style={{ width: "15rem" }}>Se connecter</Button>
+            <Button style={{ width: "15rem" }} onClick={handleRegister}>
+              S'inscrire
+            </Button>
+            <Button style={{ width: "15rem" }} onClick={handleLogin}>
+              Se connecter
+            </Button>
           </ButtonGroup>
         </div>
       </div>
