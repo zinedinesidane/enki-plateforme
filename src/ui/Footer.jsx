@@ -76,6 +76,10 @@ const LogoCol = styled.div`
   display: flex;
   gap: 2.5rem;
   flex-direction: column;
+
+  & img {
+    margin-left: -1rem;
+  }
 `;
 
 const FooterNav = styled.div`

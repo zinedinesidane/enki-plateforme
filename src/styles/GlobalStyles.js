@@ -117,8 +117,8 @@ textarea:focus
 
  input[type="checkbox"] {
       accent-color: var(--color-grey-900);
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 1.25rem;
+      height: 1.25rem;
     }
 
 button:has(svg) {

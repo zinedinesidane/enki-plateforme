@@ -19,7 +19,6 @@ const Phone = styled(PhoneInput)`
     outline-offset: -1px;
   }
   & input {
-    /* padding: 0.8rem 1.2rem; */
     border: none;
     &:focus {
       outline: none;
@@ -37,11 +36,39 @@ const RegisterLayout = styled.div`
 `;
 
 const Left = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
+  & > div {
+    padding: 4rem;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    /* top: 0;
+    left: 0; */
+    z-index: 1;
+
+    &:nth-child(1) {
+      bottom: -11rem;
+      right: -11rem;
+      transform: rotate(-45deg);
+      outline: 3px solid var(--color-orange);
+      outline-offset: 4rem;
+      clip-path: polygon(20% 150%, 100% 150%, 40% 50%, 0% 50%);
+    }
+    &:nth-child(2) {
+      top: -10rem;
+      left: -10rem;
+      outline: 3px solid var(--color-black);
+      outline-offset: 4rem;
+      clip-path: polygon(45% -50%, 70% -50%, 100% 50%, 0 50%);
+      transform: rotate(-35deg);
+    }
+  }
   & p {
     max-width: 30rem;
     margin-top: 4rem;
@@ -124,6 +151,8 @@ function Register() {
   return (
     <RegisterLayout>
       <Left>
+        <div></div>
+        <div></div>
         <Heading style={{ fontWeight: "700", fontSize: "3.5rem" }} as="h2">
           Enseigne avec nous !
         </Heading>

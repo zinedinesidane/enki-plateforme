@@ -70,7 +70,7 @@ function Aboutus() {
           <img src="./imgs/sec1img1.jpg" alt="Hero section img" />
         </div>
         <div>
-          <Heading as="h2">Commencez à créer vos cours en ligne</Heading>
+          <Heading as="h2">Commencez à créer vos cours en ligne !</Heading>
           <p>
             Avec Enki, commencez à créer vos cours gratuitement et partagez-les
             avec vos élèves.

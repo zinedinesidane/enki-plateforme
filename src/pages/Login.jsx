@@ -10,7 +10,6 @@ const LoginLayout = styled.div`
   grid-template-columns: 1.3fr 1.7fr;
   place-items: center;
   min-height: 100vh;
-  gap: 0;
 `;
 
 const Left = styled.div`
@@ -179,7 +178,7 @@ function Login() {
         </div>
       </Right>
 
-      <Bottom>
+      {/* <Bottom>
         <ul>
           <li>
             <NavLink>News et mise à jour</NavLink>
@@ -203,7 +202,7 @@ function Login() {
             <NavLink>Envoyer un feedback</NavLink>
           </li>
         </ul>
-      </Bottom>
+      </Bottom> */}
     </LoginLayout>
   );
 }
