@@ -6,7 +6,7 @@ import { CiUser } from "react-icons/ci";
 import StarRating from "./StarRating";
 
 const StyledUnit = styled(StyledCellule)`
-  height: 43rem;
+  height: 38rem;
   width: 27rem;
 `;
 const ModifyButton = styled.button`
@@ -36,7 +36,7 @@ const Category = styled.span`
 const Front = styled.div`
   height: 100%;
   & img {
-    height: 39%;
+    height: 44%;
     object-fit: cover;
   }
 
@@ -46,7 +46,7 @@ const Front = styled.div`
     align-items: center;
     justify-content: center;
     position: relative;
-    height: 61%;
+    height: 56%;
     & > div:not(:first-child) {
       position: absolute;
       display: flex;
@@ -138,7 +138,7 @@ function Unit({ finished }) {
             </span>{" "}
             <div
               style={{
-                bottom: "2.4rem",
+                bottom: "1.3rem",
                 left: "2rem",
               }}
             >
@@ -147,7 +147,7 @@ function Unit({ finished }) {
             </div>
             <div
               style={{
-                bottom: "2.4rem",
+                bottom: "1.3rem",
                 right: "2rem",
               }}
             >

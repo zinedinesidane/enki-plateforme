@@ -101,7 +101,7 @@ function Section() {
           </div>
         </Row>
       </StyledSection> */}
-      <Aboutus />
+      {/* <Aboutus /> */}
       <CellulesSection />
       <StyledSection
         type="full-width"

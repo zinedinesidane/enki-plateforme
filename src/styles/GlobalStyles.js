@@ -3,10 +3,13 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyles = createGlobalStyle`
 :root {
   --color-primary: #8a7efc;
+  --color-primary-500:#009ddc;
   --color-primary-600:#0582CA;
   --color-primary-700: #072F60;
-  
-  --color-primary-900: #151948;
+  --color-primary-800: #151948;
+  --color-primary-900: #23222D;
+
+
   /* Grey */
   --color-grey-0: #fff;
   --color-grey-50: #F6F7F9;
@@ -82,6 +85,16 @@ button {
 
 *:disabled {
   cursor: not-allowed;
+}
+button:disabled {
+  /* font-size: 2rem; */
+  font-weight: 500;
+  color:white;
+  background-color: var(--color-grey);
+  border: none;
+  
+  padding: 1.2rem 1.6rem;
+  border-radius: 32px;
 }
 
 select:disabled,

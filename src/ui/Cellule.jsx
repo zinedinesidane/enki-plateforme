@@ -9,8 +9,8 @@ export const StyledCellule = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  width: 26rem;
-  height: 33rem;
+  width: 25rem;
+  height: 30rem;
   border-radius: 32px;
   box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
   & button {
@@ -43,7 +43,7 @@ const Front = styled.div`
   & > div:first-child {
     position: relative;
     height: 55%;
-    padding: 1.6rem 2.8rem;
+    padding: 1.6rem 2rem;
 
     & span {
       font-size: 1.6rem;
@@ -69,6 +69,7 @@ const Front = styled.div`
     padding: 1rem;
     background-color: var(--color-orange);
     padding: 1.6rem 2.8rem;
+    padding: 1.6rem 2rem;
     position: relative;
     text-align: center;
     /* display: flex;

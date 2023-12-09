@@ -7,14 +7,14 @@ const Heading = styled.h1`
       font-size: 5rem;
       font-weight: 500;
       line-height: 120%;
-      color: var(--color-primary-900);
+      color: var(--color-primary-800);
     `}
   ${(props) =>
     props.as === "h2" &&
     css`
       font-size: 3.2rem;
       font-weight: 600;
-      color: var(--color-primary-900);
+      color: var(--color-primary-800);
     `}
   ${(props) =>
     props.as === "h3" &&
