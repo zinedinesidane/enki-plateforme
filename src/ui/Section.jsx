@@ -65,7 +65,7 @@ const Content = styled.div`
   }
 `;
 
-function Section() {
+function Section({ loggedin }) {
   return (
     <>
       {/* <StyledSection
@@ -101,36 +101,39 @@ function Section() {
           </div>
         </Row>
       </StyledSection> */}
-      <Aboutus />
-      <CellulesSection />
-      <StyledSection
-        type="full-width"
-        bgc="var(--color-grey-0)"
-        background="./imgs/sec2bg.png"
-        bg_position="150% 20%"
-      >
-        <Row type="horizontal--full-width">
-          <Content>
-            <Heading as="h2">Créer une Unité !</Heading>
-            <p>
-              Créez vos cours en ligne gratuitement et vendez les sur le
-              marketplace ou partagez-les avec vos élèves ! Utilisez tous les
-              outils mis à votre disposition afin de créer des cours de qualité
-              et ludiques. <br /> <br /> Assemblez vos unités en cellule selon
-              une même thématique afin de guider vos élèves à travers vos cours.
-              Suivez leurs progrès, constatez là où ils bloquent et retravaillez
-              vos cours afin de leur offrir le meilleur avenir possible !<br />{" "}
-              <br /> Commencez dés maintenant ! C’est gratuit et facile !
-            </p>
-          </Content>
-          <Img>
-            <img src="./imgs/sec2img.png" alt="unité section img" />
-          </Img>
-        </Row>
-        <Button style={{ marginTop: "2rem" }} size="large">
-          Commencer à créer
-        </Button>
-      </StyledSection>
+      {!loggedin ? <Aboutus /> : <CellulesSection />}
+
+      {!loggedin && (
+        <StyledSection
+          type="full-width"
+          bgc="var(--color-grey-0)"
+          background="./imgs/sec2bg.png"
+          bg_position="150% 20%"
+        >
+          <Row type="horizontal--full-width">
+            <Content>
+              <Heading as="h2">Créer une Unité !</Heading>
+              <p>
+                Créez vos cours en ligne gratuitement et vendez les sur le
+                marketplace ou partagez-les avec vos élèves ! Utilisez tous les
+                outils mis à votre disposition afin de créer des cours de
+                qualité et ludiques. <br /> <br /> Assemblez vos unités en
+                cellule selon une même thématique afin de guider vos élèves à
+                travers vos cours. Suivez leurs progrès, constatez là où ils
+                bloquent et retravaillez vos cours afin de leur offrir le
+                meilleur avenir possible !<br /> <br /> Commencez dés maintenant
+                ! C’est gratuit et facile !
+              </p>
+            </Content>
+            <Img>
+              <img src="./imgs/sec2img.png" alt="unité section img" />
+            </Img>
+          </Row>
+          <Button style={{ marginTop: "2rem" }} size="large">
+            Commencer à créer
+          </Button>
+        </StyledSection>
+      )}
       {/* <StyledSection
         padding="0rem 5.4rem"
         type="center"
@@ -179,60 +182,63 @@ function Section() {
         </Row>
       </StyledSection> */}
       <UnitSection />
-      <MyUnits />
-      <StyledSection
-        type="full-width"
-        bgc="var(--color-grey-0)"
-        // bgc="red"
-        background="./imgs/sec2bg.png"
-        bg_position="-20% 10%"
-        maxWidth="1000px"
-      >
-        <Row className="breakout" type="horizontal--full-width">
-          <Img
-            style={{
-              borderRadius: "5.2rem",
-              backgroundColor: "var(--color-orange)",
-              padding: "2.5rem 2rem",
-            }}
-          >
-            <img
+      {loggedin ? (
+        <MyUnits />
+      ) : (
+        <StyledSection
+          type="full-width"
+          bgc="var(--color-grey-0)"
+          // bgc="red"
+          background="./imgs/sec2bg.png"
+          bg_position="-20% 10%"
+          maxWidth="1000px"
+        >
+          <Row className="breakout" type="horizontal--full-width">
+            <Img
               style={{
-                objectFit: "cover",
-                clipPath:
-                  "polygon(20% 3%, 80% 3%, 97% 20%, 97% 80%,80% 97%, 20% 97%, 3% 80%, 3% 20%)",
+                borderRadius: "5.2rem",
+                backgroundColor: "var(--color-orange)",
+                padding: "2.5rem 2rem",
               }}
-              src="./imgs/sec4img.jpg"
-              alt="unité section img"
-            />
-          </Img>
+            >
+              <img
+                style={{
+                  objectFit: "cover",
+                  clipPath:
+                    "polygon(20% 3%, 80% 3%, 97% 20%, 97% 80%,80% 97%, 20% 97%, 3% 80%, 3% 20%)",
+                }}
+                src="./imgs/sec4img.jpg"
+                alt="unité section img"
+              />
+            </Img>
 
-          <Content>
-            <Heading as="h2">Pourquoi Enki ?</Heading>
-            <p>
-              Enki a été créé afin de donner une alternative innovante et
-              créative à l’enseignement classique. La société dans laquelle nous
-              vivons aujourd’hui est en perpétuelle changement et il est parfois
-              difficile de s’y retrouver. L’école dans l’état actuel des choses
-              est dépassée et ne stimule plus assez nos enfants pour que ces
-              derniers arrivent à affronter le monde qui les attend. <br />{" "}
-              <br /> Notre but est de donner le goût de la curiosité et de la
-              connaissance aux plus jeunes comme aux plus âgés : Apprendre
-              devrait être éun plaisir qui ne se tarit jamais. <br /> <br />
-              C’est donc pourquoi nous avons décidé de nous lancer dans ce
-              périple : Donner des outils à des citoyens motivés afin qu’ils
-              puissent offrir de leur temps et de leur talent à une des causes
-              les plus belles qui soit : La naissance d’une nouvelle génération.
-              !<br /> <br /> “C'est l'art suprême de l'enseignant d'éveiller la
-              joie dans l'expression créative et la connaissance.” <br /> Albert
-              Einstein
-            </p>
-          </Content>
-        </Row>
+            <Content>
+              <Heading as="h2">Pourquoi Enki ?</Heading>
+              <p>
+                Enki a été créé afin de donner une alternative innovante et
+                créative à l’enseignement classique. La société dans laquelle
+                nous vivons aujourd’hui est en perpétuelle changement et il est
+                parfois difficile de s’y retrouver. L’école dans l’état actuel
+                des choses est dépassée et ne stimule plus assez nos enfants
+                pour que ces derniers arrivent à affronter le monde qui les
+                attend. <br /> <br /> Notre but est de donner le goût de la
+                curiosité et de la connaissance aux plus jeunes comme aux plus
+                âgés : Apprendre devrait être éun plaisir qui ne se tarit
+                jamais. <br /> <br />
+                C’est donc pourquoi nous avons décidé de nous lancer dans ce
+                périple : Donner des outils à des citoyens motivés afin qu’ils
+                puissent offrir de leur temps et de leur talent à une des causes
+                les plus belles qui soit : La naissance d’une nouvelle
+                génération. !<br /> <br /> “C'est l'art suprême de l'enseignant
+                d'éveiller la joie dans l'expression créative et la
+                connaissance.” <br /> Albert Einstein
+              </p>
+            </Content>
+          </Row>
 
-        <Button style={{ marginTop: "2.5rem" }}>Commencer à créer</Button>
-      </StyledSection>
-
+          <Button style={{ marginTop: "2.5rem" }}>Commencer à créer</Button>
+        </StyledSection>
+      )}
       <MAJSection />
       <ContactSection />
       <AvisSection />

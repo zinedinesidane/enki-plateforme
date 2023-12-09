@@ -92,7 +92,7 @@ export const Group = styled.div`
     color: #666;
   }
   & > input {
-    /* width: 40rem; */
+    box-shadow: var(--shadow-sm);
     border-radius: 6px;
     border: 1px solid rgba(102, 102, 102, 0.35);
     padding: 0.8rem 1.2rem;

@@ -98,6 +98,7 @@ const RegisterForm = styled.form`
 
   & input {
     background-color: #f2f7fa;
+    box-shadow: var(--shadow-sm);
   }
   & > div:first-of-type {
     display: grid;

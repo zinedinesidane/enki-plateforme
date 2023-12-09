@@ -6,8 +6,8 @@ import { CiUser } from "react-icons/ci";
 import StarRating from "./StarRating";
 
 const StyledUnit = styled(StyledCellule)`
-  height: 38rem;
-  width: 27rem;
+  height: 37rem;
+  width: 25rem;
 `;
 const ModifyButton = styled.button`
   z-index: 99;

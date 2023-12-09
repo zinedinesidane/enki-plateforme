@@ -1,9 +1,9 @@
 import Section from "../ui/Section";
 
-function Home() {
+function Home({ loggedin }) {
   return (
     <>
-      <Section />
+      <Section loggedin={loggedin} />
     </>
   );
 }

@@ -11,6 +11,10 @@ const StyledForm = styled.form`
 const Input = styled.input`
   background: none;
   border: none;
+
+  &:focus {
+    outline: none;
+  }
 `;
 const Button = styled.button`
   background: none;
