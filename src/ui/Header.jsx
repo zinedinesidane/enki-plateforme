@@ -20,7 +20,7 @@ const StyledHeader = styled.header`
 function Header() {
   return (
     <StyledHeader>
-      <Logo />
+      <Logo text={true} />
       <MainNav />
       <Search />
       <UserAvatar />

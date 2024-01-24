@@ -3,7 +3,9 @@ import styled, { css } from "styled-components";
 const sizes = {
   small: css`
     font-size: 1.2rem;
-    padding: 0.4rem 0.8rem;
+    /* padding: 0.4rem 0.8rem; */
+    padding: 1rem 1.6rem;
+
     text-transform: uppercase;
     font-weight: 600;
     text-align: center;
@@ -42,8 +44,8 @@ const variations = {
     border-radius: 5px;
 
     &:hover {
-      background-color: var(--color-green-light);
-      color: var(--color-green);
+      background-color: var(--color-primary);
+      /* color: var(--color-green); */
     }
   `,
   secondary: css`
@@ -56,6 +58,16 @@ const variations = {
     &:hover {
       background-color: var(--color-green);
       color: var(--color-grey-0);
+    }
+  `,
+  tertiary: css`
+    color: var(--color-grey-0);
+    background: var(--color-orange);
+    transition: all 0.3s;
+    border-radius: 6px;
+
+    &:hover {
+      background-color: #111;
     }
   `,
   danger: css`

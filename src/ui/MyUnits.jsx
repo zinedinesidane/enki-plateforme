@@ -4,6 +4,7 @@ import Heading from "./Heading";
 import Filter from "./Filter";
 import Unit from "./Unit";
 import Button from "./Button";
+import { StyledCellules } from "./Cellules";
 
 const StyledSection = styled(ContentGrid)`
   background: var(--color-grey-0);
@@ -20,11 +21,6 @@ const Wrapper = styled.div`
     margin-top: 5rem;
   }
 `;
-const Cellules = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem 2rem;
-`;
 
 function MyUnits() {
   return (
@@ -34,13 +30,13 @@ function MyUnits() {
         <Filter />
       </Text>
       <Wrapper className="full-width">
-        <Cellules>
+        <StyledCellules>
           <Unit />
           <Unit />
           <Unit />
           <Unit />
           <Unit />
-        </Cellules>
+        </StyledCellules>
         <Button variation="primary">Commencer à créer</Button>
       </Wrapper>
     </StyledSection>

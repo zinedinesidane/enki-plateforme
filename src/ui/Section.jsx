@@ -5,7 +5,6 @@ import Heading from "./Heading";
 import MAJSection from "./MAJSection";
 import ContactSection from "./ContactSection";
 import AvisSection from "./AvisSection";
-import ButtonGroup from "./ButtonGroup";
 import UnitSection from "./UnitSection";
 import Aboutus from "./Aboutus";
 import ContentGrid from "./ContentGrid";

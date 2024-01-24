@@ -2,35 +2,12 @@ import styled from "styled-components";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import { useState } from "react";
+import { ModifyButton, Ressource } from "./Ressource";
 
-export const StyledCellule = styled.div`
-  position: relative;
+export const StyledCellule = styled(Ressource)`
   background-color: var(--color-grey-0);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  width: 24rem;
-  height: 30rem;
-  border-radius: 32px;
-  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
-  & button {
-    background: none;
-    border: none;
-  }
 `;
-const ModifyButton = styled.button`
-  z-index: 99;
-  position: absolute;
-  top: 1.6rem;
-  right: 2rem;
-  & svg {
-    color: ${(props) =>
-      props.isFlipped ? "var(--color-primary)" : "var(--color-green)"};
 
-    height: 3rem;
-    width: 3rem;
-  }
-`;
 const Title = styled.span`
   font-size: 2rem;
   font-weight: 600;
@@ -43,7 +20,7 @@ const Front = styled.div`
   & > div:first-child {
     position: relative;
     height: 55%;
-    padding: 1.6rem 2rem;
+    /* padding: 1.6rem 2rem; */
 
     & span {
       font-size: 1.6rem;
@@ -62,6 +39,9 @@ const Front = styled.div`
       font-weight: 600;
       color: var(--color-grey-900);
       white-space: nowrap;
+      &:focus {
+        outline: none;
+      }
     }
   }
   & > div:not(:first-child) {
@@ -72,6 +52,7 @@ const Front = styled.div`
     padding: 1.6rem 2rem;
     position: relative;
     text-align: center;
+
     /* display: flex;
     justify-content: center; */
     & div {
@@ -79,8 +60,8 @@ const Front = styled.div`
       display: flex;
       align-items: center;
       gap: 0.5rem;
-      font-weight: 400;
-      font-size: 2rem;
+      font-weight: 500;
+      font-size: 1.8rem;
       & svg {
         height: 2rem;
         width: 2rem;
@@ -121,13 +102,13 @@ const Back = styled.div`
   }
 `;
 
-function Cellule({ finished }) {
+function Cellule({ status, finished }) {
   const [isFlipped, setFlipped] = useState(false);
   const handleFlip = () => {
     setFlipped(!isFlipped);
   };
   return (
-    <StyledCellule finished={finished}>
+    <StyledCellule width="24rem" height="28rem" finished={finished}>
       <ModifyButton isFlipped={!isFlipped} onClick={handleFlip}>
         <IoSettingsOutline />
       </ModifyButton>
@@ -135,23 +116,26 @@ function Cellule({ finished }) {
       {!isFlipped ? (
         <Front>
           <div>
-            <span
-              style={{
-                color: finished
-                  ? "var(--color-green-flash)"
-                  : "var(--color-orange-300)",
-              }}
-            >
-              {" "}
-              {finished ? "Terminé" : "En cours"}
-            </span>
-            <button>Ajouter une illustration</button>
+            {status && (
+              <span
+                style={{
+                  color: finished
+                    ? "var(--color-green-flash)"
+                    : "var(--color-orange-300)",
+                }}
+              >
+                {" "}
+                {finished ? "Terminé" : "En cours"}
+              </span>
+            )}
+            {false && <button>Ajouter une illustration</button>}
+            {true && <img src="./imgs/Rectangle.png" alt="cellule " />}
           </div>
           <div>
             <Title>Français : conjugaison</Title>
             <div
               style={{
-                bottom: "1.6rem",
+                bottom: ".8rem",
                 left: "2.8rem",
               }}
             >
@@ -160,7 +144,7 @@ function Cellule({ finished }) {
             </div>
             <div
               style={{
-                bottom: "1.6rem",
+                bottom: ".8rem",
                 right: "2.8rem",
               }}
             >

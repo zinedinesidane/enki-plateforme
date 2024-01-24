@@ -30,6 +30,12 @@ const Heading = styled.h1`
       font-size: 2.5rem;
       font-weight: 600;
     `}
+  ${(props) =>
+    props.as === "h5" &&
+    css`
+      font-size: 1.8rem;
+      font-weight: 600;
+    `}
 `;
 
 export default Heading;

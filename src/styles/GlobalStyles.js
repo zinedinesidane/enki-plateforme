@@ -72,14 +72,16 @@ body {
 }
 
 input,
-button,
 textarea,
 select {
-  font: inherit;
+  font-weight: 500;
+  font-size: inherit;
   color: inherit;
 }
 
 button {
+  font: inherit;
+  color: inherit;
   cursor: pointer;
 }
 
@@ -103,15 +105,16 @@ input:disabled {
   color: var(--color-grey-500);
 }
 
-button:focus,
+/* button:focus, */
 select:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: -1px;
 }
+
 input:focus,
 textarea:focus
 {
-  outline: 2px solid var(--color-grey-900);
+  outline: 2px solid var(--color-primary);
   outline-offset: -1px;
 }
 
@@ -153,8 +156,6 @@ img {
   vertical-align: middle;
   background-repeat: no-repeat;
 
-  /* For dark mode */
-  /* filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity)); */
 }
 
 

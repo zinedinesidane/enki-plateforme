@@ -90,14 +90,18 @@ const Right = styled.div`
 const RegisterForm = styled.form`
   border-radius: 12px;
   background-color: var(--color-grey-50);
+  background-color: var(--color-grey-100);
+
   background-color: white;
   padding: 3.2rem 6rem;
   max-width: 58rem;
-  background-color: #f2f7fa;
+  background-color: #fbfbfb;
+
   border: 1px solid rgba(102, 102, 102, 0.3);
 
   & input {
-    background-color: #f2f7fa;
+    background-color: #fbfbfb;
+
     box-shadow: var(--shadow-sm);
   }
   & > div:first-of-type {
@@ -162,7 +166,7 @@ function Register() {
           rapidement.
         </p>
 
-        <Logo />
+        <Logo text={true} />
       </Left>
 
       <Right>

@@ -1,27 +1,15 @@
 import styled from "styled-components";
-import { StyledCellule } from "./Cellule";
 import { useState } from "react";
 import { IoSettingsOutline } from "react-icons/io5";
 import { CiUser } from "react-icons/ci";
 import StarRating from "./StarRating";
+import { ModifyButton, Ressource } from "./Ressource";
 
-const StyledUnit = styled(StyledCellule)`
-  height: 37rem;
-  width: 25rem;
-`;
-const ModifyButton = styled.button`
-  z-index: 99;
-  position: absolute;
-  top: 1.6rem;
-  right: 2rem;
-  & svg {
-    color: ${(props) =>
-      props.isFlipped ? "var(--color-orange)" : "var(--color-primary)"};
+// const StyledUnit = styled(Ressource)`
+//   height: 37rem;
+//   width: 25rem;
+// `;
 
-    height: 3rem;
-    width: 3rem;
-  }
-`;
 const Title = styled.span`
   font-size: 2rem;
   font-weight: 700;
@@ -103,7 +91,7 @@ function Unit({ finished }) {
     setFlipped(!isFlipped);
   };
   return (
-    <StyledUnit>
+    <Ressource height="37rem" width="25rem">
       <ModifyButton isFlipped={!isFlipped} onClick={handleFlip}>
         <IoSettingsOutline />
       </ModifyButton>
@@ -177,7 +165,7 @@ function Unit({ finished }) {
           </ul>
         </Back>
       )}
-    </StyledUnit>
+    </Ressource>
   );
 }
 

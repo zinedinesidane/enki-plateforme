@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
 const Img = styled.img`
-  height: 7.2rem;
-  /* width: auto; */
-  width: 14rem;
+  height: ${(props) => (props.text ? "7.2rem" : "5.6rem")};
+  width: ${(props) => (props.text ? "14rem" : "auto")};
 `;
 
-function Logo() {
-  return <Img src="./imgs/enki-logo.png" alt="Enki logo" />;
+function Logo({ text }) {
+  const logo = text ? "/imgs/enki-logo-text.png" : "/imgs/enki-logo.png";
+  return <Img text={text} src={logo} alt="Enki logo" />;
 }
 
 export default Logo;

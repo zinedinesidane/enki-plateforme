@@ -2,27 +2,8 @@ import styled from "styled-components";
 import ContentGrid from "./ContentGrid";
 import Heading from "./Heading";
 import Button from "./Button";
-import { FaPlus } from "react-icons/fa";
-import Cellule, { StyledCellule } from "./Cellule";
+import Cellules from "./Cellules";
 import Filter from "./Filter";
-
-const AddCell = styled(StyledCellule)`
-  align-items: center;
-  justify-content: center;
-  gap: 4rem;
-  & span {
-    font-size: 1.7rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-  }
-  & button {
-    & svg {
-      height: 9.2rem;
-      width: 9.2rem;
-      color: var(--color-orange);
-    }
-  }
-`;
 
 const StyledSection = styled(ContentGrid)`
   background: var(--color-grey-0);
@@ -43,11 +24,6 @@ const Wrapper = styled.div`
     margin-top: 5rem;
   }
 `;
-export const Cellules = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem 2rem;
-`;
 
 function CellulesSection() {
   return (
@@ -61,19 +37,7 @@ function CellulesSection() {
         <Filter />
       </Text>
       <Wrapper className="full-width">
-        <Cellules>
-          <AddCell>
-            <button>
-              <FaPlus />
-            </button>
-            <span>Créer une nouvelle cellule</span>
-          </AddCell>
-          <Cellule />
-          <Cellule />
-          <Cellule />
-          <Cellule finished={true} />
-          <Cellule finished={true} />
-        </Cellules>
+        <Cellules />
         <Button variation="primary">Commencer à créer</Button>
       </Wrapper>
     </StyledSection>

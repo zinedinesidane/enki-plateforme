@@ -96,7 +96,7 @@ function Footer() {
       <FooterTop>
         <LogoCol>
           <Heading as="h4">Enki </Heading>
-          <Logo />
+          <Logo text={true} />
         </LogoCol>
         <ContactCol>
           <Heading as="h4">Contact Info</Heading>
